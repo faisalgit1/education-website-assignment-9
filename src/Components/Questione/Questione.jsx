@@ -1,5 +1,6 @@
 import React from 'react';
 import Optiones from '../Optiones/Optiones';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -10,9 +11,9 @@ const Questione = ({ quiz }) => {
 
     return (
         <div>
-            <div className='font-semibold text-white  text-center '>
+            <div className='font-semibold text-white text-center'>
                 <div className='px-10 md:mr-60 md:ml-60 '>
-                    <div className='flex items-center justify-between md:px-10 px-2 my-4 bg-black'>
+                    <div className='flex items-center justify-between md:px-10 px-2 bg-black my-4'>
                         <div>
                             <p className='my-5  '> Question:{question}</p>
                         </div>
