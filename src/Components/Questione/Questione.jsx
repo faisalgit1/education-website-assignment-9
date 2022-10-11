@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import Optiones from '../Optiones/Optiones';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,7 +9,15 @@ import 'react-toastify/dist/ReactToastify.css';
 const Questione = ({ quiz }) => {
     const { question, options, correctAnswer } = quiz;
 
+    const checkAnswer = (selectedOption) => {
+        if (correctAnswer === selectedOption) {
+            toast.success('Right', { autoClose: 500 })
+        }
+        else {
+            toast.warning('Wrong Answer!', { autoClose: 500 })
 
+        }
+    }
     return (
         <div>
             <div className='font-semibold text-white text-center'>
@@ -27,7 +36,7 @@ const Questione = ({ quiz }) => {
                             options.map(option => <Optiones
                                 key={option.id}
                                 option={option}
-
+                                checkAnswer={checkAnswer}
                             ></Optiones>)
                         }
 
