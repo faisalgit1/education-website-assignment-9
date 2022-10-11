@@ -45,13 +45,13 @@ const Header = () => {
                                 text-gray-100 transition-colors
                                  duration-200 hover:text-teal-accent-
                                  400">Home</Link></li>
-                            <li><Link to="/quiz"
-                                aria-label="Quiz"
-                                title="Quiz"
+                            <li><Link to="/statics"
+                                aria-label="statics"
+                                title="statics"
                                 class="font-medium tracking-wide 
                              text-gray-100 transition-colors duration-
                              200 hover:text-teal-accent-
-                             400">Quiz</Link></li>
+                             400">Statics</Link></li>
                             <li><Link to="/blog"
                                 aria-label="Blog"
                                 title="Blog"
@@ -158,13 +158,13 @@ const Header = () => {
                                                duration-200 hover:text-deep
                                                -purple-accent-
                                                400">Home</Link></li>
-                                                <li><Link to="/quiz"
-                                                    aria-label="Quiz"
-                                                    title="Quiz"
+                                                <li><Link to="/statics"
+                                                    aria-label="statics"
+                                                    title="statics"
                                                     class="font-medium tracking-wide
                                                      text-gray-700 transition-colors duration-200 
                                                      hover:text-deep-purple-accent
-                                                     -400">Quiz</Link></li>
+                                                     -400">Statics</Link></li>
                                                 <li><Link to="/blog"
                                                     aria-label="blog"
                                                     title="blog"

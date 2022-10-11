@@ -1,7 +1,10 @@
 import React from 'react';
 
+
 const HomeItem = ({ item }) => {
-    const { name, total, logo } = item
+    const { name, total, logo, id } = item
+
+
     return (
         <div class="max-w-xs rounded-md p-6 shadow-md dark:bg-gray-900 dark:text-gray-100">
             <img className='bg-black' src={logo} />
