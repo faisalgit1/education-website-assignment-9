@@ -5,12 +5,14 @@ import Home from './Components/Home/Home.jsx'
 import Questiones from './Components/Questions/Questiones';
 import Blog from './Components/Blog/Blog';
 import Statics from './Components/Statics/Statics';
+import Errorpage from './Components/ErrorPage/Errorpage';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
       loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
+      errorElement: <Errorpage></Errorpage>,
       element: <Main></Main>,
       children: [
         {
