@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Questione from '../Questione/Questione';
 
@@ -6,17 +6,32 @@ const Questiones = () => {
     const questiones = useLoaderData()
     const { name } = questiones.data;
     const quizes = questiones.data.questions;
-    console.log(questiones)
+
+    const [correctAns, setCorrectAns] = useState([0])
+    const [wrongAns, setWrongAns] = useState([0])
+
+    const handleWrongAns = () => {
+        let newCorrectAns = parseFloat(wrongAns) + 1;
+        setWrongAns(newCorrectAns)
+    }
+    const handleCorrectAns = () => {
+        let newCorrectAns = parseFloat(correctAns) + 1;
+        setCorrectAns(newCorrectAns)
+    }
     return (
         <div>
             <div className='text-center text-white my-4'>
-                <h1 className='text-red-500 text-4xl font-semibold'>{name} Questions </h1>
+                <h1 className='text-black text-4xl font-semibold'>{name} Questions </h1>
+                <h4 className='text-green-500 text-2xl'>Right: {correctAns}</h4>
+                <h4 className='text-red-500 text-2xl'>Wrong: {wrongAns}</h4>
             </div>
             <div>
                 {
                     quizes.map(quiz => <Questione
                         key={quiz.id}
                         quiz={quiz}
+                        handleCorrectAns={handleCorrectAns}
+                        handleWrongAns={handleWrongAns}
                     ></Questione>)
                 }
             </div>

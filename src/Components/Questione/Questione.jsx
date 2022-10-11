@@ -8,7 +8,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Questione = ({ quiz }) => {
+const Questione = ({ quiz, handleCorrectAns, handleWrongAns }) => {
     const { question, options, correctAnswer } = quiz;
 
     const [showIcon, setIcon] = useState(false)
@@ -16,10 +16,11 @@ const Questione = ({ quiz }) => {
     const checkAnswer = (selectedOption) => {
         if (correctAnswer === selectedOption) {
             toast.success('Right', { autoClose: 500 })
+            handleCorrectAns()
         }
         else {
             toast.warning('Wrong Answer!', { autoClose: 500 })
-
+            handleWrongAns()
         }
     }
     return (
