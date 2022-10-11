@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import Optiones from '../Optiones/Optiones';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const Questione = ({ quiz }) => {
     const { question, options, correctAnswer } = quiz;
+
+    const [showIcon, setIcon] = useState(false)
 
     const checkAnswer = (selectedOption) => {
         if (correctAnswer === selectedOption) {
@@ -27,7 +31,7 @@ const Questione = ({ quiz }) => {
                             <p className='my-5  '> Question:{question}</p>
                         </div>
                         <div>
-
+                            <FontAwesomeIcon onClick={() => setIcon(true)} icon={faEye} />
 
                         </div>
                     </div>
@@ -43,7 +47,9 @@ const Questione = ({ quiz }) => {
 
                     </div>
                     <div>
-
+                        <p className={`${showIcon ? 'block text-red-500 font-bold' : 'hidden'}`}>
+                            Correct Ans: {correctAnswer}
+                        </p>
 
                     </div>
                 </div>

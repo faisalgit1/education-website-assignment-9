@@ -10,7 +10,7 @@ const Questiones = () => {
     return (
         <div>
             <div className='text-center text-white my-4'>
-                <h1 className='text-4xl font-semibold'>{name} Questions </h1>
+                <h1 className='text-red-500 text-4xl font-semibold'>{name} Questions </h1>
             </div>
             <div>
                 {
