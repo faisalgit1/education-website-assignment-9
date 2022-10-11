@@ -8,7 +8,7 @@ const Statics = () => {
     return (
         <div>
             <div className='p-7'>
-                <h1 className='text-5xl'>This sites is about to the all total questiones details show to this chart  </h1>
+                <h1 className='text-5xl text-center'>This sites is about to the all total questiones details show to this chart  </h1>
             </div>
             <div className='flex  justify-center'>
                 <LineChart width={400} height={400} data={data}>
