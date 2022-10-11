@@ -5,7 +5,7 @@ const Header = () => {
     const [open, setOpen] = useState(false)
     return (
         <div>
-            <div class="bg-gray-900">
+            <div class="bg-black">
                 <div class="px-4 py-5 mx-auto sm:max-w-xl
                  md:max-w-full lg:max-w-screen-xl md:px-24 
                  lg:px-8 ">
@@ -15,7 +15,7 @@ const Header = () => {
                             aria-label="Knowledge Education"
                             title="Knowledge Education"
                             class="inline-flex items-center">
-                            <svg class="w-8 text-teal-accent-400"
+                            <svg class="w-8 text-white text-teal-accent-400"
                                 viewBox="0 0 24 24"
                                 stroke-linejoin="round"
                                 stroke-width="2"
