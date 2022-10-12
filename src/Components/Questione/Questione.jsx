@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import Optiones from '../Optiones/Optiones';
 
@@ -10,6 +10,14 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 const Questione = ({ quiz, handleCorrectAns, handleWrongAns }) => {
     const { question, options, correctAnswer } = quiz;
+
+    const [string, setString] = useState(question)
+
+    useEffect(() => {
+        const tag = /(<([^>]+)>)/ig;
+        const newString = string.replace(tag, "")
+        setString(newString)
+    }, [string]);
 
     const [showIcon, setIcon] = useState(false)
 
@@ -29,7 +37,7 @@ const Questione = ({ quiz, handleCorrectAns, handleWrongAns }) => {
                 <div className='px-10 md:mr-60 md:ml-60 '>
                     <div className='flex items-center justify-between md:px-10 px-2 bg-black my-4'>
                         <div>
-                            <p className='my-5  '> Question:{question}</p>
+                            <p className='my-5  '> Question:{string}</p>
                         </div>
                         <div>
                             <FontAwesomeIcon onClick={() => setIcon(true)} icon={faEye} />

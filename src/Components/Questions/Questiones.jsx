@@ -11,12 +11,12 @@ const Questiones = () => {
     const [wrongAns, setWrongAns] = useState([0])
 
     const handleWrongAns = () => {
-        let newCorrectAns = parseFloat(wrongAns) + 1;
-        setWrongAns(newCorrectAns)
+        let newAns = parseFloat(wrongAns) + 1;
+        setWrongAns(newAns)
     }
     const handleCorrectAns = () => {
-        let newCorrectAns = parseFloat(correctAns) + 1;
-        setCorrectAns(newCorrectAns)
+        let newAns = parseFloat(correctAns) + 1;
+        setCorrectAns(newAns)
     }
     return (
         <div>
